@@ -1,0 +1,18 @@
+ <cronentries>
+  <cron>
+    <url>/machine/messages</url>
+    <description>Fetch for new Messages</description>
+    <schedule>every 10 minutes</schedule>
+  </cron>
+  <cron>
+    <url>/machine/posting</url>
+    <description>Post New Message and Image</description>
+    <schedule>every 1 minutes</schedule>
+  </cron>
+  <cron>
+    <url>/system/config</url>
+    <description>System Config</description>
+    <schedule>every 24 hours</schedule>
+  </cron>
+</cronentries>
+ 

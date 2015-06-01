@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  
+  <servlet>
+    <description></description>
+    <display-name>TestServlet</display-name>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>com.mediacode.twittermachine.servlets.TestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/TestServlet</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <description></description>
+    <display-name>HomeServlet</display-name>
+    <servlet-name>HomeServlet</servlet-name>
+    <servlet-class>com.mediacode.twittermachine.servlets.HomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomeServlet</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>OAuthServlet</display-name>
+    <servlet-name>OAuthServlet</servlet-name>
+    <servlet-class>com.mediacode.twittermachine.servlets.users.OAuthServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OAuthServlet</servlet-name>	
+    <url-pattern>/users/oauth</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>AdminServlet</display-name>
+    <servlet-name>AdminServlet</servlet-name>
+    <servlet-class>com.mediacode.twittermachine.servlets.users.AdminServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>AdminServlet</servlet-name>
+    <url-pattern>/users/login/admin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>UserValidade</display-name>
+    <servlet-name>UserValidade</servlet-name>
+    <servlet-class>com.mediacode.twittermachine.servlets.users.ValidateServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UserValidade</servlet-name>
+    <url-pattern>/users/login/validate</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>UserLogout</display-name>
+    <servlet-name>UserLogout</servlet-name>
+    <servlet-class>com.mediacode.twittermachine.servlets.users.LogoutServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>UserLogout</servlet-name>
+    <url-pattern>/users/logout</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>SystemConfig</display-name>
+    <servlet-name>SystemConfig</servlet-name>
+    <servlet-class>com.mediacode.twittermachine.servlets.SystemConfigServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>SystemConfig</servlet-name>
+    <url-pattern>/system/config</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>ImportMedia</display-name>
+    <servlet-name>ImportMedia</servlet-name>
+    <servlet-class>com.mediacode.twittermachine.servlets.media.ImportMedia</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ImportMedia</servlet-name>
+    <url-pattern>/media/import</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>LoadMessages</display-name>
+    <servlet-name>LoadMessages</servlet-name>
+    <servlet-class>com.mediacode.twittermachine.servlets.users.LoadMessages</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>LoadMessages</servlet-name>
+    <url-pattern>/machine/messages</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>PostMessages</display-name>
+    <servlet-name>PostMessages</servlet-name>
+    <servlet-class>com.mediacode.twittermachine.servlets.users.PostMessages</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>PostMessages</servlet-name>
+    <url-pattern>/machine/posting</url-pattern>
+  </servlet-mapping>
+  
+	<filter>
+	        <filter-name>ObjectifyFilter</filter-name>
+	        <filter-class>com.mediacode.twittermachine.filters.OfyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	        <filter-name>ObjectifyFilter</filter-name>
+	        <url-pattern>/*</url-pattern>
+	</filter-mapping>
+ 	<filter>
+	        <filter-name>AuthFilter</filter-name>
+	        <filter-class>com.mediacode.twittermachine.filters.AuthFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+	        <filter-name>AuthFilter</filter-name>
+	        <url-pattern>/*</url-pattern>
+	        <dispatcher>REQUEST</dispatcher> 
+	</filter-mapping>  
+
+	<filter>
+	        <filter-name>OAuthFilter</filter-name>
+	        <filter-class>com.mediacode.twittermachine.filters.OAuthFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	        <filter-name>OAuthFilter</filter-name>
+	        <url-pattern>/*</url-pattern>
+	</filter-mapping>  
+</web-app>

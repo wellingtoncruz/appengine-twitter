@@ -1,0 +1,27 @@
+<datastore-indexes
+  autoGenerate="false">
+  
+    <datastore-index kind="Message" ancestor="false" source="auto">
+        <property name="posted" direction="asc"/>
+        <property name="user" direction="asc"/>
+        <property name="saved" direction="desc"/>
+    </datastore-index>
+
+    <datastore-index kind="Message" ancestor="false" source="auto">
+        <property name="posted" direction="asc"/>
+        <property name="user" direction="asc"/>
+        <property name="saved" direction="asc"/>
+    </datastore-index>
+
+    <datastore-index kind="Message" ancestor="false" source="auto">
+        <property name="posted" direction="asc"/>
+        <property name="user" direction="asc"/>
+        <property name="posted" direction="desc"/>
+    </datastore-index>
+  
+   <datastore-index kind="Media" ancestor="false" source="manual">
+        <property name="user" direction="asc"/>
+        <property name="lastused" direction="asc"/>
+    </datastore-index>
+    
+</datastore-indexes>
