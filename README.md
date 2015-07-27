@@ -1,5 +1,5 @@
 # appengine-twitter
-A Twitter robot tool writed in Java and designed for GAE.
+A Twitter robot tool written in Java and designed for GAE.
 Uses Twitter API with Twitter4J, using some abstract datasource
 for parsing information and save in the GAE NOSQL datastore,
 scheduling for Twitter post.
